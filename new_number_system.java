@@ -1,43 +1,30 @@
-package GP_morgan;
-
 import java.util.*;
 
 public class new_number_system {
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String abc = "abcdefghijklmnopqrstuvwxyz";
 		char[] ch = abc.toCharArray();
 		int num =1;
-		
-		String str = sc.next();
 		HashMap<Character, Integer> map = new HashMap<>();
-		
 		for(char c : ch) {
 			map.put(c,num);
 			num++;
 		}
 		
-		if(str.length()<1) {
-			int n = map.get(str.charAt(0));
-			System.out.println(n);
-		}else {
-			for(int i=0;i<str.length();i++) {
-		    	int n = map.get(str.charAt(i));
-			    if((i+1) == str.length()) {
-					System.out.print(n);
-					break;
-			    }else {
-					System.out.print(n+1);
-			    }
+		String str = sc.next();
+		for(int i=0;i<str.length();i++) {
+		int n = map.get(str.charAt(i));
+		     if((i+1) == str.length()) {
+			System.out.print(n);
+			break;
+		     }else {
+			System.out.print(n+1);
 			}
 		}
-		
 		sc.close();
 	}
 }
-
-
 /*
 Problem Statement:
 Here is about to introduce a new kind of number system. Where instead of 10 digits there is
